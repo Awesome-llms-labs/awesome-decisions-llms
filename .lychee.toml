@@ -8,6 +8,7 @@ exclude = [
   "https://replit.com",  # bot-blocking (RemoteDisconnected on plain GET)
   "https://platform.openai.com",  # 403 to automated checks; live for humans
   "https://fly.io",  # bot-hostile to automated checks
+  "https://www.pnas.org",  # 403 to automated checks; live for humans
 ]
 # Be lenient with rate-limited hosts; retry before failing.
 max_retries = 3

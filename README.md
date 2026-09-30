@@ -31,7 +31,7 @@ Chat benchmarks tell you how well a model *talks*. This list is about how well i
 
 Models fine-tuned or designed for decision tasks — not general chat models with a reasoning mode bolted on.
 
-- [Bosun v3.1](https://huggingface.co/blog/Hanno-Labs/decisionbench-bosun-v3-1) — ✅ Hanno Labs (Sept 2026): open-weight Qwen3-based decision models (0.6B & 1.7B) that score runtime answer choices through learned decision tokens, with a typed decision API (`choice`/`score`/`noul`) and a Jev-compatible `/v1/systemone` server.
+- [Bosun v3.1](https://huggingface.co/blog/Hanno-Labs/decisionbench-bosun-v3-1) — ✅ Hanno Labs (Sept 2026): open-weight Qwen3-based decision models (0.6B & 1.7B) with 256 learned decision tokens — runtime answer choices are scored via masked softmax over decision-token slots (up to 255 candidates), returning full answer distributions over a typed API (`choice`/`score`/`noul`) with a Jev-compatible `/v1/systemone` server.
 - [Sky-T1-32B-Preview](https://huggingface.co/NovaSky-AI/Sky-T1-32B-Preview) — ✅ NovaSky AI (UC Berkeley): open-weight 32B long-CoT reasoning model trained to replicate o1-style deliberate reasoning; SFT on 17K verified reasoning traces for under $450 (vendor-reported); card-reported Math500 82.4, AIME2024 43.3, GPQA-Diamond 56.8.
 - [Prometheus 2](https://github.com/prometheus-eval/prometheus-eval) — ✅ Open-weight evaluator LLMs (7B & 8x7B) for the judging step of decision pipelines: direct Likert assessment and pairwise ranking; 0.6–0.7 Pearson with GPT-4-1106 and 72–85% human-judgment agreement (per repo README); Apache-2.0.
 - [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) — ✅ DeepSeek: open 671B-MoE reasoning model trained with large-scale RL (GRPO); the deliberative substrate behind many decision benchmarks and distilled decision fine-tunes. Listed here once — full coverage in [awesome-flagship-llms](https://github.com/dakotac1994/awesome-flagship-llms).
@@ -67,7 +67,8 @@ Models fine-tuned or designed for decision tasks — not general chat models wit
 
 ### Bounded real-world decisions
 
-- [DecisionBench](https://github.com/atlanai/decision-bench) — ✅ Atlan AI (2026): how accurately, quickly, and cheaply models make bounded decisions on real data. Corpus bench-v4: 1,071 rows, 35 tasks, 11 use cases from 36 public datasets; reports accuracy with 95% CIs, calibration, latency, tokens, cost. 12-model results (2026-09-23) at [decisionbench.ai](https://decisionbench.ai). MIT. Note: distinct from Hanno Labs' DecisionBench (see [status changes](docs/status-changes.md)).
+- [DecisionBench](https://github.com/atlanai/decision-bench) — ✅ Atlan AI (2026): how accurately, quickly, and cheaply models make bounded decisions on real data. Corpus bench-v4: 1,071 rows, 35 tasks, 11 use cases from 36 public datasets; reports accuracy with 95% CIs, calibration, latency, tokens, cost. 12-model results (2026-09-23) at [decisionbench.ai](https://decisionbench.ai). MIT.
+- [DecisionBench (Hanno Labs)](https://huggingface.co/blog/Hanno-Labs/decisionbench-bosun-v3-1) — ✅ Hanno Labs (Sept 2026): MTEB-inspired open decision-model benchmark — frozen tasks with row-level evidence and a community result record. DecisionBench 1.0: 43 tasks, 23,900 English rows, 28 domains; 22,700-row applied suite + 1,200-row reasoning track; primary score all-row accuracy with coverage, ECE, NLL. Distinct from Atlan AI's DecisionBench above — see [status changes](docs/status-changes.md).
 
 ---
 
@@ -124,7 +125,7 @@ Models fine-tuned or designed for decision tasks — not general chat models wit
 - [Decision-making evaluation](docs/decision-making-evaluation.md) — what each benchmark family tests, how to read scores honestly, and a minimum viable eval for a decision pipeline.
 - [Glossary](docs/glossary.md) — rationality, MCDM, calibration, deliberative reasoning, OPRO, sycophancy, and more.
 - [Status changes](docs/status-changes.md) — retirements, naming collisions, and material claim changes, newest first.
-- [Machine-readable catalog](data/decisions-llms.json) — all 47 entries with decision-verification status, source, and date.
+- [Machine-readable catalog](data/decisions-llms.json) — all 48 entries with decision-verification status, source, and date.
 
 ## Related repositories
 
