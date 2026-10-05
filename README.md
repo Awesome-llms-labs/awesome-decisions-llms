@@ -83,6 +83,7 @@ Models fine-tuned or designed for decision tasks — not general chat models wit
 - [DSPy](https://github.com/stanfordnlp/dspy) — ✅ Stanford NLP: program (don't prompt) LMs — declarative signatures plus algorithmic optimizers (MIPRO) compile high-quality multi-step decision pipelines. MIT; ~38.4K stars; docs at [dspy.ai](https://dspy.ai).
 
 ### Multi-agent decision systems
+- [AI Group Call](https://aigroupcall.app) - You set a goal and two to eight AI voices run a round-table call with you: drop-ins, barge-in, and a written recap.
 
 - [ReConcile](https://github.com/dinobby/ReConcile) — ✅ Chen, Saha, Bansal, ACL 2024: round-table consensus among diverse LLMs with confidence-weighted voting. Beats prior single- and multi-agent baselines by up to 11.4%; outperforms GPT-4 on three datasets (per abstract).
 - [Mixture-of-Agents](https://github.com/togethercomputer/moa) — ✅ Wang et al., ICLR 2025 (Together AI): proposer layers generate diverse candidates, an aggregator synthesizes one decision. 65.1% on AlpacaEval 2.0 with open models only, beating GPT-4 Omni's 57.5% (per repo README); no fine-tuning. Apache-2.0.
